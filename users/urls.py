@@ -1,10 +1,13 @@
 # auth_app/urls.py
 from django.urls import path
-from .views import LoginView, DonorRegisterView, DoctorRegisterView, BloodBankRegisterView
+from .views import BloodBankProfileView, DoctorProfileView, DonorProfileView, LoginView, DonorRegisterView, DoctorRegisterView, BloodBankRegisterView
 
 urlpatterns = [
     path('auth/login/', LoginView.as_view(), name='login'),
     path('auth/register/donneur/', DonorRegisterView.as_view(), name='register_donor'),
     path('auth/register/doctor/', DoctorRegisterView.as_view(), name='register_doctor'),
     path('auth/register/blood_bank/', BloodBankRegisterView.as_view(), name='register_bank'),
+    path('donor/<int:pk>/', DonorProfileView.as_view(), name='donor-profile'),
+    path('doctor/<int:pk>/', DoctorProfileView.as_view(), name='doctor-profile'),
+    path('bloodbank/<int:pk>/', BloodBankProfileView.as_view(), name='bloodbank-profile')
 ]
