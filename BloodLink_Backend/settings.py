@@ -19,6 +19,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'users',
     'Doctor',
+    'BloodBank',
+    'Donor',
+    'Notification'
 ]
 
 AUTH_USER_MODEL = "users.User"
